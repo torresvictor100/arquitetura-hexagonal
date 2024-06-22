@@ -1,0 +1,22 @@
+enum Status {
+    ENABLED
+    DISABLED
+}
+
+type Product {
+    id: ID!
+    name: String!
+    price: Int!
+    status: Status!
+}
+
+type Query {
+    getProductById(id: ID) : Product
+}
+
+type Mutation {
+    createProduct(name: String!, price: Int!): Product
+    enableProduct(productId: ID!): Product
+    disableProduct(productId: ID!): Product
+    updateProductPriceProduct(productId: ID!, price: Int!): Product
+}
